@@ -112,19 +112,12 @@ The repository is intended to support scientific reproducibility, not dataset re
 Requirements
 
 Dependencies are listed in requirements.txt.
-
 Main requirements:
-
 Python ≥ 3.8
-
 PyTorch
-
 Albumentations
-
 NumPy
-
 PIL
-
 tqdm
 
 License
