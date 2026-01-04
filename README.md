@@ -1,7 +1,6 @@
 Lung Nodule Segmentation with NoduNet
 
 This repository contains the official PyTorch implementation of the lung nodule segmentation framework presented in our manuscript.
-
 The codebase is provided for reproducibility and transparency purposes and follows the same experimental setup described in the paper.
 
 Repository Structure
@@ -27,17 +26,12 @@ The proposed model is a lightweight encoder–decoder segmentation network desig
 
 Key components include:
 
-MobileNetV2-based encoder adapted for single-channel (grayscale) input
-
-Residual dilated blocks for enhanced receptive field
-
-Lightweight ASPP module
-
-Attention-based skip connections
-
-Deep supervision during training
-
-The architecture implementation in models/nodunet.py exactly matches the model described in the manuscript.
+-MobileNetV2-based encoder adapted for single-channel (grayscale) input
+-Residual dilated blocks for enhanced receptive field
+-Lightweight ASPP module
+-Attention-based skip connections
+-Deep supervision during training
+-The architecture implementation in models/nodunet.py exactly matches the model described in the manuscript.
 
 Dataset Format
 
@@ -54,9 +48,7 @@ data/
             └── masks/
 
 -Input images are grayscale CT slices
-
 -Masks are binary segmentation maps
-
 -File naming is abstracted and does not rely on dataset-specific identifiers
 
 Dataset paths and names have been anonymized for public release.
@@ -64,7 +56,6 @@ Dataset paths and names have been anonymized for public release.
 Training
 
 Model training is performed using train.py.
-
 Example command:
 python train.py \
   --data_dir data/processed \
@@ -73,40 +64,28 @@ python train.py \
   --lr 1e-4
 Training details:
 
-Optimizer: AdamW
-
-Loss: Combined BCE + Dice loss with deep supervision
-
-Mixed-precision training (AMP)
-
-Learning rate scheduling based on validation loss
+-Optimizer: AdamW
+-Loss: Combined BCE + Dice loss with deep supervision
+-Mixed-precision training (AMP)
+-Learning rate scheduling based on validation loss
 
 All training hyperparameters follow the configuration reported in the paper.
 
 Evaluation
 
 Model evaluation is performed using test.py.
-
 The script computes standard segmentation metrics including:
-
-Dice coefficient
-
-IoU
-
-Precision / Recall
-
-F1-score
-
-Specificity
-
+-Dice coefficient
+-IoU
+-Precision / Recall
+-F1-score
+-Specificity
 Optional qualitative predictions can be saved for visual inspection.
 
 Reproducibility Notes
 
 Data augmentation and validation strategies are implemented exactly as described in the manuscript.
-
 No dataset-specific identifiers or private file paths are included.
-
 The repository is intended to support scientific reproducibility, not dataset redistribution.
 
 Requirements
