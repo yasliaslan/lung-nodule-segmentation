@@ -10,8 +10,6 @@ from PIL import Image
 import numpy as np
 from collections import Counter
 from torch.cuda.amp import GradScaler, autocast
-
-# Proje içi importlar
 from models.nodunet import NoduNet
 from utils.losses import combined_loss
 
