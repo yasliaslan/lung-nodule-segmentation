@@ -1,4 +1,4 @@
-Lung Nodule Segmentation with NoduNet
+Lung Nodule Segmentation with Node-U-Net
 
 This repository contains the official PyTorch implementation of the lung nodule segmentation framework presented in our manuscript.
 The codebase is provided for reproducibility and transparency purposes and follows the same experimental setup described in the paper.
@@ -7,15 +7,15 @@ Repository Structure
 lung-nodule-segmentation/
 │
 ├── models/
-│   └── nodunet.py          # NoduNet / MobileNoduNet architecture
+│   └── nodunet.py          
 │
 ├── utils/
-│   ├── losses.py           # Loss functions used during training
-│   └── metrics.py          # Evaluation metrics
+│   ├── losses.py           
+│   └── metrics.py          
 │
-├── train.py                # Training script
-├── test.py                 # Evaluation script
-├── prepare_data.py         # Dataset preparation utilities
+├── train.py                
+├── test.py                 
+├── prepare_data.py         
 │
 ├── requirements.txt
 └── README.md
@@ -27,7 +27,7 @@ The proposed model is a lightweight encoder–decoder segmentation network desig
 Key components include:
 
 -MobileNetV2-based encoder adapted for single-channel (grayscale) input
--Residual dilated blocks for enhanced receptive field
+-Residual dilated blocks 
 -Lightweight ASPP module
 -Attention-based skip connections
 -Deep supervision during training
@@ -62,8 +62,8 @@ python train.py \
   --epochs 50 \
   --batch_size 8 \
   --lr 1e-4
-Training details:
 
+Training details:
 -Optimizer: AdamW
 -Loss: Combined BCE + Dice loss with deep supervision
 -Mixed-precision training (AMP)
@@ -77,9 +77,8 @@ Model evaluation is performed using test.py.
 The script computes standard segmentation metrics including:
 -Dice coefficient
 -IoU
--Precision / Recall
--F1-score
--Specificity
+-Precision
+-Sensitivity
 Optional qualitative predictions can be saved for visual inspection.
 
 Reproducibility Notes
