@@ -70,7 +70,7 @@ class AttentionGate(nn.Module):
         psi = self.psi(g1 + x1)
         return x * psi
 
-class MobileNoduNet95(nn.Module):
+class NoduNet(nn.Module):
     def __init__(self):
         super().__init__()
         mobilenet = mobilenet_v2(weights=MobileNet_V2_Weights.DEFAULT)
